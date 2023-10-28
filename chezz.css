@@ -75,3 +75,6 @@ div * {
 .green {
   background: rgb(65, 161, 73) !important;
 }
+.neonblue_txt {
+  animation: neonBlueText 1.5s ease-in-out infinite alternate;
+}
