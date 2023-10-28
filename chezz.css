@@ -78,3 +78,6 @@ div * {
 .neonblue_txt {
   animation: neonBlueText 1.5s ease-in-out infinite alternate;
 }
+.neonorange_txt {
+  animation: neonOrangeText 1.5s ease-in-out infinite alternate;
+}
