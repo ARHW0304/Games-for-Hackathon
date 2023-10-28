@@ -124,3 +124,7 @@ div * {
       0 0 35px #228dff, 0 0 40px #228dff, 0 0 50px #228dff, 0 0 75px #228dff;
   }
 }
+.shake-little {
+  display: inline-block;
+  transform-origin: center center; 
+}
