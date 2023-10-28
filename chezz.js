@@ -78,3 +78,43 @@ let main = {
         },
         w_pawn3: {
           position: '3_2',
+ img: '&#9817;',
+          captured: false,
+          type: 'w_pawn',
+          moved: false
+        },
+        w_pawn4: {
+          position: '4_2',
+          img: '&#9817;',
+          captured: false,
+          type: 'w_pawn',
+          moved: false
+        },
+        w_pawn5: {
+          position: '5_2',
+          img: '&#9817;',
+          captured: false,
+          type: 'w_pawn',
+          moved: false
+        },
+        w_pawn6: {
+          position: '6_2',
+          img: '&#9817;',
+          captured: false,
+          type: 'w_pawn',
+          moved: false
+        },
+        w_pawn7: {
+          position: '7_2',
+          img: '&#9817;',
+          captured: false,
+          type: 'w_pawn',
+          moved: false
+        },
+        w_pawn8: {
+          position: '8_2',
+          img: '&#9817;',
+          captured: false,
+          type: 'w_pawn',
+          moved: false
+        },
