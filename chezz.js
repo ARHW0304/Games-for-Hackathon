@@ -118,3 +118,10 @@ let main = {
           type: 'w_pawn',
           moved: false
         },
+ b_king: {
+          position: '5_8',
+          img: '&#9818;',
+          captured: false,
+          moved: false,
+          type: 'b_king'
+        },
