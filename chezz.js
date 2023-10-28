@@ -125,3 +125,24 @@ let main = {
           moved: false,
           type: 'b_king'
         },
+ b_queen: {
+          position: '4_8',
+          img: '&#9819;',
+          captured: false,
+          moved: false,
+          type: 'b_queen'
+        },
+        b_bishop1: {
+          position: '3_8',
+          img: '&#9821;',
+          captured: false,
+          moved: false,
+          type: 'b_bishop'
+        },
+        b_bishop2: {
+          position: '6_8',
+          img: '&#9821;',
+          captured: false,
+          moved: false,
+          type: 'b_bishop'
+        },
