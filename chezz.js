@@ -48,3 +48,33 @@ let main = {
           moved: false,
           type: 'w_knight'
         },
+ w_rook1: {
+          position: '1_1',
+          img: '&#9814;',
+          captured: false,
+          moved: false,
+          type: 'w_rook'
+        },
+        w_rook2: {
+          position: '8_1',
+          img: '&#9814;',
+          captured: false,
+          moved: false,
+          type: 'w_rook'
+        },
+        w_pawn1: {
+          position: '1_2',
+          img: '&#9817;',
+          captured: false,
+          type: 'w_pawn',
+          moved: false
+        },
+        w_pawn2: {
+          position: '2_2',
+          img: '&#9817;',
+          captured: false,
+          type: 'w_pawn',
+          moved: false
+        },
+        w_pawn3: {
+          position: '3_2',
