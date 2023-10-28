@@ -796,4 +796,45 @@ methods: {
             $('#'+r_position).attr('chess','null');
             $('#'+r_target).html(main.variables.pieces['b_rook2'].img);
             $('#'+r_target).attr('chess','b_rook2');
+         main.methods.endturn();
+            
+          } else { // move selectedpiece
+            main.methods.move(target);
+            main.methods.endturn();
+          }
     
+        } else { // else if selecedpiece.name is not white/black king than move
+  
+          main.methods.move(target);
+          main.methods.endturn();
+  
+        }
+          
+      } else if (main.variables.selectedpiece !='' && target.name != 'null' && target.id != selectedpiece.id && selectedpiece.name.slice(0,1) != target.name.slice(0,1)){ // capture a piece
+        
+        if (selectedpiece.id != target.id && main.variables.highlighted.indexOf(target.id) != (-1)) { // if it's not trying to capture pieces not in its movement range
+          
+          // capture
+          main.methods.capture(target)
+          main.methods.endturn();
+          
+        }
+  
+      } else if (main.variables.selectedpiece !='' && target.name != 'null' && target.id != selectedpiece.id && selectedpiece.name.slice(0,1) == target.name.slice(0,1)){ // toggle move options
+  
+        // toggle
+        main.methods.togglehighlight(main.variables.highlighted);
+        main.variables.highlighted.length = 0;
+  
+        main.variables.selectedpiece = target.id;
+        main.methods.moveoptions(target.name);
+  
+      }
+  
+    });
+  
+    $('body').contextmenu(function(e) {
+      e.preventDefault();
+    });
+  
+  });
