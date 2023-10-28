@@ -493,3 +493,203 @@ methods: {
             coordinates = coordinates.filter(val => {
               return ($('#' + val).attr('chess') == 'null' || ($('#' + val).attr('chess')).slice(0,1) == 'b');
             });
+ break;
+  
+          case 'b_knight':
+  
+            coordinates = coordinates.filter(val => {
+              return ($('#' + val).attr('chess') == 'null' || ($('#' + val).attr('chess')).slice(0,1) == 'w');
+            });
+  
+            break;
+  
+          case 'w_pawn':
+  
+              coordinates = coordinates.filter(val => {
+                let sp = { x: 0, y: 0 };
+                let coordinate = val.split('_');
+  
+                sp.x = startpoint.split('_')[0];
+                sp.y = startpoint.split('_')[1];
+                
+                if (coordinate[0] < sp.x || coordinate[0] > sp.x){ // if the coordinate is on either side of the center, check if it has an opponent piece on it;
+                  return ($('#' + val).attr('chess') != 'null' && ($('#' + val).attr('chess')).slice(0,1) == 'b'); // return coordinates with opponent pieces on them
+                } else { // else if the coordinate is in the center;
+                  if (coordinate[1] == (parseInt(sp.y) + 2) && $('#' + sp.x + '_' + (parseInt(sp.y) + 1)).attr('chess') != 'null'){
+                    // do nothing if this is the pawns first move, and there is a piece in front of the 2nd coordinate;
+                  } else {
+                    return ($('#' + val).attr('chess') == 'null'); // otherwise return the coordinate if there is no chess piece on it;
+                  }
+                }
+                            
+              });
+           
+            break;
+  
+          case 'b_pawn':
+  
+            coordinates = coordinates.filter(val => {
+              let sp = { x: 0, y: 0 };
+              let coordinate = val.split('_');
+  
+              sp.x = startpoint.split('_')[0];
+              sp.y = startpoint.split('_')[1];
+              
+              if (coordinate[0] < sp.x || coordinate[0] > sp.x){ // if the coordinate is on either side of the center, check if it has an opponent piece on it;
+                return ($('#' + val).attr('chess') != 'null' && ($('#' + val).attr('chess')).slice(0,1) == 'w'); // return coordinates with opponent pieces on them
+              } else { // else if the coordinate is in the center;
+                if (coordinate[1] == (parseInt(sp.y) - 2) && $('#' + sp.x + '_' + (parseInt(sp.y) - 1)).attr('chess') != 'null'){
+                  // do nothing if this is the pawns first move, and there is a piece in front of the 2nd coordinate;
+                } else {
+                  return ($('#' + val).attr('chess') == 'null'); // otherwise return the coordinate if there is no chess piece on it;
+                }
+              }
+            });
+  
+            break;
+        }      
+  
+        return coordinates;
+      },
+  
+      w_options: function (position,coordinates) {
+        
+        let flag = false;
+        
+        coordinates = coordinates.map(function(val){ // convert the x,y into actual grid id coordinates;
+            return (parseInt(position.x) + parseInt(val.x)) + '_' + (parseInt(position.y) + parseInt(val.y));
+          }).filter(val => {
+            let pos = { x: 0, y: 0 };
+            pos.x = parseInt(val.split('_')[0]);
+            pos.y = parseInt(val.split('_')[1]);
+    
+            if (!(pos.x < 1) && !(pos.x > 8) && !(pos.y < 1) && !(pos.y > 8)) { // if it is not out of bounds, return the coordinate;
+              return val;
+            }
+          }).filter(val => { // algorithm to determine line-of-sight movement options for bishop/rook/queen;
+            if (flag == false){
+              if ($('#' + val).attr('chess') == 'null'){
+                console.log(val)
+                return val;
+              } else if (($('#' + val).attr('chess')).slice(0,1) == 'b') {
+                flag = true;
+                console.log(val)
+                return val;
+              } else if (($('#' + val).attr('chess')).slice(0,1) == 'w') {
+                console.log(val+'-3')
+                flag = true;
+              }
+            }
+          });
+  
+        return coordinates;
+        
+      },
+  
+      b_options: function (position,coordinates) {
+        
+        let flag = false;
+        
+        coordinates = coordinates.map(function(val){ // convert the x,y into actual grid id coordinates;
+            return (parseInt(position.x) + parseInt(val.x)) + '_' + (parseInt(position.y) + parseInt(val.y));
+          }).filter(val => {
+            let pos = { x: 0, y: 0 };
+            pos.x = parseInt(val.split('_')[0]);
+            pos.y = parseInt(val.split('_')[1]);
+    
+            if (!(pos.x < 1) && !(pos.x > 8) && !(pos.y < 1) && !(pos.y > 8)) { // if it is not out of bounds, return the coordinate;
+              return val;
+            }
+          }).filter(val => { // algorithm to determine line-of-sight movement options for bishop/rook/queen;
+            if (flag == false){
+              if ($('#' + val).attr('chess') == 'null'){
+                return val;
+              } else if (($('#' + val).attr('chess')).slice(0,1) == 'w') {
+                flag = true;
+                return val;
+              } else if (($('#' + val).attr('chess')).slice(0,1) == 'b') {
+                flag = true;
+              }
+            }
+          });
+  
+        return coordinates;
+        
+      },
+  
+      capture: function (target) {
+        let selectedpiece = {
+          name: $('#' + main.variables.selectedpiece).attr('chess'),
+          id: main.variables.selectedpiece
+        };
+  
+        
+          //new cell
+          $('#' + target.id).html(main.variables.pieces[selectedpiece.name].img);
+          $('#' + target.id).attr('chess',selectedpiece.name);
+          //old cell
+          $('#' + selectedpiece.id).html('');
+          $('#' + selectedpiece.id).attr('chess','null');
+          //moved piece
+          main.variables.pieces[selectedpiece.name].position = target.id;
+          main.variables.pieces[selectedpiece.name].moved = true;
+          // captured piece
+          main.variables.pieces[target.name].captured = true;
+          /*
+          // toggle highlighted coordinates
+          main.methods.togglehighlight(main.variables.highlighted);
+          main.variables.highlighted.length = 0;
+          // set the selected piece to '' again
+          main.variables.selectedpiece = '';
+          */
+        
+      },
+  
+      move: function (target) {
+  
+        let selectedpiece = $('#' + main.variables.selectedpiece).attr('chess');
+  
+        // new cell
+        $('#' + target.id).html(main.variables.pieces[selectedpiece].img);
+        $('#' + target.id).attr('chess',selectedpiece);
+        // old cell
+        $('#' + main.variables.selectedpiece).html('');
+        $('#' + main.variables.selectedpiece).attr('chess','null');
+        main.variables.pieces[selectedpiece].position = target.id;
+        main.variables.pieces[selectedpiece].moved = true;
+  
+        /*
+        // toggle highlighted coordinates
+        main.methods.togglehighlight(main.variables.highlighted);
+        main.variables.highlighted.length = 0;
+        // set the selected piece to '' again
+        main.variables.selectedpiece = '';
+        */
+      },
+  
+      endturn: function(){
+  
+        if (main.variables.turn == 'w') {
+          main.variables.turn = 'b';
+          
+          // toggle highlighted coordinates
+          main.methods.togglehighlight(main.variables.highlighted);
+          main.variables.highlighted.length = 0;
+          // set the selected piece to '' again
+          main.variables.selectedpiece = '';
+  
+          $('#turn').html("It's Blacks Turn");
+  
+          $('#turn').addClass('turnhighlight');
+          window.setTimeout(function(){
+            $('#turn').removeClass('turnhighlight');
+          }, 1500);
+  
+        } else if (main.variables.turn = 'b'){
+          main.variables.turn = 'w';
+  
+          // toggle highlighted coordinates
+          main.methods.togglehighlight(main.variables.highlighted);
+          main.variables.highlighted.length = 0;
+          // set the selected piece to '' again
+          main.variables.selectedpiece = '';
