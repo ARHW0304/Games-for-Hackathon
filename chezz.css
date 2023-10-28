@@ -128,3 +128,8 @@ div * {
   display: inline-block;
   transform-origin: center center; 
 }
+.shake-freeze,
+.shake-constant.shake-constant--hover:hover,
+.shake-trigger:hover .shake-constant.shake-constant--hover {
+  animation-play-state: paused;
+}
