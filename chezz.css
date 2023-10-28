@@ -138,6 +138,13 @@ div * {
 .shake-trigger:hover .shake-little {
   animation-play-state: running; 
 }
+.shake-little:hover,
+.shake-trigger:hover .shake-little, .shake-little.shake-freeze, .shake-little.shake-constant {
+  animation-name: shake-little;
+  animation-duration: 100ms;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+ }
 @keyframes shake-little {
   2% {
     transform: translate(1px, 0px) rotate(0.5deg); }
