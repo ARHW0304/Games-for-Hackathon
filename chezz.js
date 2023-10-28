@@ -146,3 +146,90 @@ let main = {
           moved: false,
           type: 'b_bishop'
         },
+ b_knight1: {
+          position: '2_8',
+          img: '&#9822;',
+          captured: false,
+          moved: false,
+          type: 'b_knight'
+        },
+        b_knight2: {
+          position: '7_8',
+          img: '&#9822;',
+          captured: false,
+          moved: false,
+          type: 'b_knight'
+        },
+        b_rook1: {
+          position: '1_8',
+          img: '&#9820;',
+          captured: false,
+          moved: false,
+          type: 'b_rook'
+        },
+        b_rook2: {
+          position: '8_8',
+          img: '&#9820;',
+          captured: false,
+          moved: false,
+          type: 'b_rook'
+        },
+        b_pawn1: {
+          position: '1_7',
+          img: '&#9823;',
+          captured: false,
+          type: 'b_pawn',
+          moved: false
+        },
+        b_pawn2: {
+          position: '2_7',
+          img: '&#9823;',
+          captured: false,
+          type: 'b_pawn',
+          moved: false
+        },
+        b_pawn3: {
+          position: '3_7',
+          img: '&#9823;',
+          captured: false,
+          type: 'b_pawn',
+          moved: false
+        },
+        b_pawn4: {
+          position: '4_7',
+          img: '&#9823;',
+          captured: false,
+          type: 'b_pawn',
+          moved: false
+        },
+        b_pawn5: {
+          position: '5_7',
+          img: '&#9823;',
+          captured: false,
+          type: 'b_pawn',
+          moved: false
+        },
+        b_pawn6: {
+          position: '6_7',
+          img: '&#9823;',
+          captured: false,
+          type: 'b_pawn',
+          moved: false
+        },
+        b_pawn7: {
+          position: '7_7',
+          img: '&#9823;',
+          captured: false,
+          type: 'b_pawn',
+          moved: false
+        },
+        b_pawn8: {
+          position: '8_7',
+          img: '&#9823;',
+          captured: false,
+          type: 'b_pawn',
+          moved: false
+        }
+  
+      }
+    },
