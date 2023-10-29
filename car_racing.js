@@ -40,3 +40,13 @@ roadLines.y = (i * 140);
 roadLines.style.top = roadLines.y + "px";
 gameArea.appendChild(roadLines);
 }
+// creating the opponents car
+for (i = 0; i < 3; i++) {
+let Opponents = document.createElement('div');
+Opponents.setAttribute('class', 'Opponents');
+Opponents.y = ((i) * -300);
+Opponents.style.top = Opponents.y + "px";
+gameArea.appendChild(Opponents);
+Opponents.style.left = Math.floor(Math.random() * 350) + "px";
+Opponents.style.backgroundColor=randomColor();
+}
