@@ -17,10 +17,9 @@ nav {
 }
 
 img {
-    height: 100px;
-    width: 100px;
-   /* max-width: 100%;
-    height: auto;*/
+    
+    max-width: 100%;
+    height: auto;
 }
 
 nav ul {
@@ -64,10 +63,4 @@ footer {
     
 }
 
-.bnlogo {
-    width: 200px; 
-    height: 200px;
-    position: relative;
-    animation: spin 4s linear infinite; 
-}
 
