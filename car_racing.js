@@ -32,3 +32,11 @@ startScreen.classList.add('hide');
 player.isStart = true;
 player.score = 0;
 window.requestAnimationFrame(Play);
+// creating the road lines
+for (i = 0; i < 5; i++) {
+let roadLines = document.createElement('div');
+roadLines.setAttribute('class', 'roadLines');
+roadLines.y = (i * 140);
+roadLines.style.top = roadLines.y + "px";
+gameArea.appendChild(roadLines);
+}
