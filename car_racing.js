@@ -97,3 +97,17 @@ item.y += player.speed;
 item.style.top = item.y + "px";
 })
 }
+function moveOpponents(car) {
+let Opponents = document.querySelectorAll('.Opponents');
+Opponents.forEach(function (item) {
+if (isCollide(car, item)) {
+endGame();
+}
+if (item.y >= 750) {
+item.y -= 900;
+item.style.left = Math.floor(Math.random() * 350) + "px";
+}
+item.y += player.speed;
+item.style.top = item.y + "px";
+})
+}
