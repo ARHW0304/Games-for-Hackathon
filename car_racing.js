@@ -111,3 +111,9 @@ item.y += player.speed;
 item.style.top = item.y + "px";
 })
 }
+//check whether the cars collide or not
+function isCollide(a, b) {
+aRect = a.getBoundingClientRect();
+bRect = b.getBoundingClientRect();
+return !((aRect.top > bRect.bottom) || (aRect.bottom < bRect.top) || (aRect.right < bRect.left) || (aRect.left > bRect.right))
+}
