@@ -25,3 +25,10 @@ keys[e.key] = true
 function keyup(e) {
 keys[e.key] = false;
 }
+// starting the game
+function Start() {
+gameArea.innerHTML = "";
+startScreen.classList.add('hide');
+player.isStart = true;
+player.score = 0;
+window.requestAnimationFrame(Play);
