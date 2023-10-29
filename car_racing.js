@@ -14,3 +14,8 @@ ArrowDown: false,
 ArrowLeft: false,
 ArrowRight: false,
 }
+let player = {
+speed: 5,
+score: 0,
+highScore: 0
+};
