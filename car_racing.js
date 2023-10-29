@@ -19,3 +19,6 @@ speed: 5,
 score: 0,
 highScore: 0
 };
+function keydown(e) {
+keys[e.key] = true
+}
