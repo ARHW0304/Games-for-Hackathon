@@ -7,6 +7,13 @@ body {
     margin: 0;
     padding: 0;
 }
+:root{
+    --bg-color: #fdfdfd;
+    --text-color:#333;
+    --main-color:#2957A2;
+    --white-color:#fdfdfd;
+    --shadow-color: rgba(0,0,0,.2);  
+}  
 
 header {
     background-color: #333;
@@ -41,6 +48,25 @@ nav li {
 nav a {
     text-decoration: none;
     color: #fff;
+}
+.btn {
+  display: inline-block;
+  padding: 1.2rem 2.8rem;
+  background: var(--main-color);
+  border-radius: .6rem;
+  box-shadow: 0 .2rem .5rem var(--shadow-color);
+  font-size: 1.6rem;
+  color: var(--white-color);
+  letter-spacing: .1rem;
+  border: .2rem solid transparent;
+  font-weight: 600;
+  transition: .5s ease;
+}
+.btn:hover{
+background: transparent;
+color: var(--main-color);
+border-color: var(--main-color);
+
 }
 
 .ExcitedGame, .puzzle-of-the-day {
