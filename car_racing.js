@@ -88,3 +88,12 @@ score.innerHTML = "Score" + ":" + (player.score - 1);
 window.requestAnimationFrame(Play);
 }
 }
+function moveLines() {
+let roadLines = document.querySelectorAll('.roadLines');
+roadLines.forEach(function (item) {
+if (item.y >= 700)
+item.y -= 700;
+item.y += player.speed;
+item.style.top = item.y + "px";
+})
+}
