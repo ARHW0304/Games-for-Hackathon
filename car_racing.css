@@ -62,7 +62,7 @@
     top: 520px;
     }
     .Opponents {
-    background: url(opponent car.png);
+    background: url(opponentcar2.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     height: 75px;
@@ -103,7 +103,7 @@
     }
     
     .car {
-        /*background: url(car.png);*/
+        background: url(opponentcar.png);
         background-repeat: no-repeat;
         background-size: 100% 100%;
         height: 75px;
@@ -113,7 +113,7 @@
     }
     
     .Opponents {
-        background: url('opponent car.png');
+        background: url(opponentcar2.png);
         background-repeat: no-repeat;
         background-size: 100% 100%;
         height: 75px;
