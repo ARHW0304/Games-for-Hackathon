@@ -34,13 +34,13 @@ nav {
     background-color: #444;
 }
 
-img {
+section img {
    height : 120px;
    width : 150px;
    justify-content: center;
      transition: .5s ease;
 }
-img:hover{
+section img:hover{
 background: transparent;
 }
 
