@@ -22,6 +22,12 @@ body {
     --white-color: #fdfdfd;
     --shadow-color: rgba(0,0,0,.2);  
 }  
+img {
+    margin: 0px;
+    padding: 0px;
+    height: 150px;
+    width: auto;
+}
 
 header {
     background-color: #333;
