@@ -50,3 +50,9 @@ gameArea.appendChild(Opponents);
 Opponents.style.left = Math.floor(Math.random() * 350) + "px";
 Opponents.style.backgroundColor=randomColor();
 }
+let car = document.createElement('div');
+car.setAttribute('class', 'car');
+gameArea.appendChild(car);
+player.x = car.offsetLeft;
+player.y = car.offsetTop;
+}
