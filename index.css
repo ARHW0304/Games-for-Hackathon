@@ -8,7 +8,7 @@ body {
     padding: 0;
 }
 :root{
-   --main-color: linear-gradient(#2957A2,#fff);
+   --main-color: #fff;
     --white-color:#fdfdfd;
     --shadow-color: rgba(0,0,0,.2);  
 }  
