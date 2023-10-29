@@ -2,7 +2,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Lobster', cursive;
+    font-family: 'Poppins',sans-sarif;
     }
     .game{
     background-image: url(bg.jpg);
@@ -53,7 +53,7 @@
     border-right: 4px dashed white;
     }
 .car{
-    background: url(car.png);
+    background: url(car.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     height: 75px;
