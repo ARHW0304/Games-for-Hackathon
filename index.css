@@ -17,9 +17,8 @@ nav {
 }
 
 img {
-    
-    max-width: 5%;
-    height: auto;
+   height : 100px 
+   width : 100px;
     
 }
 
