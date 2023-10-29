@@ -8,3 +8,9 @@ const ClickToStart = document.querySelector('.ClickToStart');
 ClickToStart.addEventListener('click', Start);
 document.addEventListener('keydown', keydown);
 document.addEventListener('keyup', keyup);
+let keys = {
+ArrowUp: false,
+ArrowDown: false,
+ArrowLeft: false,
+ArrowRight: false,
+}
