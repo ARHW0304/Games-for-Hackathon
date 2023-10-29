@@ -117,3 +117,9 @@ aRect = a.getBoundingClientRect();
 bRect = b.getBoundingClientRect();
 return !((aRect.top > bRect.bottom) || (aRect.bottom < bRect.top) || (aRect.right < bRect.left) || (aRect.left > bRect.right))
 }
+//game is end
+function endGame() {
+player.isStart = false;
+player.speed = 5;
+startScreen.classList.remove('hide');
+}
